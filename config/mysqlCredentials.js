@@ -1,5 +1,12 @@
 module.exports = {
-  database: "fitness_node_eksamen",
-  user: "root",
-  password: "anto1283",
-};
+    development: {
+        client: 'mysql',
+        connection: {
+          database: 'Nodeeksamen',
+          host: "nodeexam.cnswd18xaykf.us-east-1.rds.amazonaws.com",
+          user: 'admin', 
+          password: 'node1234',
+          port : 3306,
+        }
+      }
+}

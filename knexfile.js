@@ -6,9 +6,12 @@ module.exports = {
   development: {
     client: "mysql",
     connection: {
-      database: credentials.database,
-      user: credentials.user,
-      password: credentials.password,
+      database: credentials.development.connection.database,
+      host:credentials.development.connection.host,
+      user: credentials.development.connection.user,
+      password: credentials.development.connection.password,
+      port: credentials.development.connection.port
+      
     },
     ...knexSnakeCaseMappers(),
   },
