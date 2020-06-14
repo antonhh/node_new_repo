@@ -2,7 +2,6 @@ router = require("express").Router();
 const Client = require("../models/client.js");
 const Client_bought_packages = require("../models/client_bought_packages.js");
 const Trainer = require("../models/trainer.js");
-const Trainer_packages = require("../models/Trainer_packages.js");
 const bodyParser = require("body-parser");
 const moment = require("moment");
 const session = require("express-session");
