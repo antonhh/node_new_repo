@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Træner Profile</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="/global.css">
+  <link rel="stylesheet" type="text/css" href="/frontpage.css">
+  <link rel="stylesheet" type="text/css" href="/trainer-package-table.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/client.js"></script>
+</head>
+
+<body>
+  <div class="hero-image">
+    <div class="container">
+      <div class="topnav">
+        <div class="topnav-centered">
+          <a href="/clientDashboard" class="active">Din Personlig Træner</a>
+        </div>
+
+        <a href="/clientDashboard">Dashboard</a>
+        <a href="/viewAllTrainers">Se alle træner</a>
+        <a href="/contact">Kontakt din træner</a>
+
+        <div class="topnav-right">
+          <a href="/clientProfile">Profil</a>
+          <a href="/logout">Log ud</a>
+        </div>
+      </div>
+
+      <div class="header-before-container">
+        <br>
+        <br>
+        <h1 id="personal-trainer-welcome"></h1>
+      </div>
+      <div class="container-in-container">
+
+        <div class="column-in-container">
+          <div class="column-in-container-header">
+            <h1>Om træneren </h1>
+          </div>
+          <div class="section-in-column">
+            <div class="trainer-packages-table">
+              <table id="trainer-display-profile">
+                <tr>
+                  <th>Træners Navn</th>
+                  <th>Træners Email</th>
+                  <th>Træners Postnummer</th>
+                  <th>Træners Bio</th>
+
+                </tr>
+              </table>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="column-in-container">
+          <div  class="column-in-container-header">
+            <h1>Træners pakker</h1>
+          </div>
+          <div  class="section-in-column">
+            <div class="trainer-packages-table">
+              <table id="trainer-display-packages">
+                <tr>
+                  <th>Pakke Navn</th>
+
+                  <th>Pris på pakken</th>
+
+                </tr>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+      <div class="footer">
+        <div class="footer-centered">
+          <a href="/clientDashboard" class="active">© Copyright</a>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+</body>

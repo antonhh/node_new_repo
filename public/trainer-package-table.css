@@ -1,0 +1,22 @@
+table{
+    width: 100%;
+    border: 2px solid white
+}
+
+td, th{
+    border-bottom: 1px solid white;
+}
+
+tr {
+    font-size: 2em;
+   
+}
+
+#trainer-display-packages{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trainer-packages-table{
+    text-align: center;
+}

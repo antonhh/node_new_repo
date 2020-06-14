@@ -1,0 +1,17 @@
+#display-all-trainers-frontpage-table {
+  color: white;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+td {
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 3px solid white;
+}
+th {
+  font-size: 25px;
+  text-align: center;
+  border-bottom: 3px solid white;
+}

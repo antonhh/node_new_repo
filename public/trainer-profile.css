@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+tr {
+  font-size: 1em;
+}
+#th {
+  border: 1px solid black;
+  padding: 10px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Træner forside</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <link rel="stylesheet" type="text/css" href="frontpage.css">
+  <link rel="stylesheet" type="text/css" href="trainer-package-table.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="trainer.js"></script>
+</head>
+
+<body>
+  <div class="hero-image">
+    <div class="container">
+      <div class="topnav">
+        <div class="topnav-centered">
+          <a href="/trainerDashboard" class="active">Din Personlig Træner</a>
+        </div>
+        <a href="/trainerDashboard">Dashboard</a>
+        <a href="/viewAllClients">Klienter</a>
+        <a href="/trainerChat">Indbakke</a>
+
+        <div class="topnav-right">
+          <a href="/trainerProfile">Profil</a>
+          <a href="/logout">Log ud</a>
+        </div>
+      </div>
+
+      <div class="header-before-container">
+        <br>
+        <br>
+        <h1 id="loggedIn-trainer">Velkommen</h1>
+      </div>
+
+      <div class="container-in-container">
+
+        <div class="column-in-container">
+
+          <h1>Dine klienter</h1>
+          <div class="trainer-customer-table">
+
+            I denne div skal der være data hentet vha AJAX til at vise kunder der har forløb hos træneren.
+
+          </div>
+        </div>
+        <div class="column-in-container">
+
+          <h1>Dine pakker</h1>
+          <form action="/newTrainerPackage" method="POST">
+            <label for="fname">Navn på pakken:</label><br>
+            <input type="text" id="name" name="name" placeholder="Navn.."><br>
+            <label for="lname">Pris på pakken:</label><br>
+            <input type="text" id="price" name="price" placeholder="Pris.."><br><br>
+
+            <input type="submit" value="Opret pakke">
+          </form>
+
+
+          <div class="trainer-packages-table">
+            <table id="trainer-display-packages">
+              <tr>
+                <th>Pakke navn</th>
+                <th>Pris på pakke</th>
+
+              </tr>
+            </table>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="footer">
+        <div class="footer-centered">
+          <a href="/trainerDashboard" class="active">Din Personlig Træner</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</body>
+
+</html>

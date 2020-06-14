@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/global.css">
+        <link rel="stylesheet" type="text/css" href="/frontpage.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Kontakt os</title>
+    </head>
+
+    <body>
+        <div class="hero-image">
+            <div class="container">
+                <div class="topnav">
+                    <div class="topnav-centered">
+                        <a href="/" class="active">Din Personlig Træner</a>
+                    </div>
+                    <a href="/">Forside</a>
+                    <a href="/frontpage/trainers">Trænere</a>
+                    <a href="/frontpage/Contactus">Kontakt os</a>
+                    <div class="topnav-right">
+                        <a href="/chooseSignup">Bliv medlem</a>
+                        <a href="/chooseLogin">Log in</a>
+                    </div>
+                </div>
+
+                <div class="header-before-container">
+                    <br>
+                    <br>
+                    <h2>Tag kontakt til os!</h2>
+                </div>
+                <div class="container-in-container">
+
+                    <div class="frontpage-text">
+
+                        Står du og leder efter en personlig træner der kan hjælpe dig med at komme i dit livs form eller
+                        er
+                        du
+                        en
+                        personlig træner der leder efter nye kunder. så er DinPersonligeTræner.dk stedet! Vores
+                        hjemmeside
+                        er et
+                        værktøj
+                        der
+                        hjælper trænere og klienter med at komme i kontakt med hinanden, her kan du browse lige den type
+                        træning
+                        du
+                        søger og som træner kan du selv oprette dine træningspakker og sætte prisen på disse.
+
+                        <div id="contact-info">
+                            <h1>Kundehenvendelser bedes gå gennem telefon eller mail.</h1>
+                            <h3>Telefon nummer: 1234 5678 </h3>
+                            <h3>Mail: support@fitnesscoach.dk </h3>
+                            <h3>Skal du bruge hjælp AKUT?<br>Vores dygtige medarbejdere sidder klar
+                                i livechatten her</h3>
+                            <a href="/livechat" target="__blank">
+                            <button >Join livechat</button>
+                            </a>
+
+
+                            <h3> Vi har også andre gode ideer end træning...</h3>
+                            <p id="activity"></p>
+                            <script>
+                                function doApiRequest() {
+                                    $.ajax({
+                                        type: 'GET',
+                                        url: "https://www.boredapi.com/api/activity",
+                                        success: function (data) {
+                                            console.log("Success", data)
+                                            document.getElementById("activity").textContent = data.activity;
+                                        }
+                                    });
+                                }             
+                            </script>
+
+                            <button onclick="doApiRequest()">Klik her!</button>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <br>
+
+                </div>
+
+                <div class=" footer">
+                    <div class="footer-centered">
+                        <a href="/" class="active">Din Personlig Træner</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+
+</html>

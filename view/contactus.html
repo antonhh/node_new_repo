@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Kontakt os</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="topnav">
+      <div class="topnav-centered">
+        <a href="/" class="active">Din Personlig Træner</a>
+      </div>
+      <a href="/">Forside</a>
+      <a href="/gyms">Center</a>
+      <a href="/courses">Hold</a>
+      <a href="/instructors">Instruktøre</a>
+      <a href="/contactus">Kontakt os</a>
+      <div class="topnav-right">
+        <a href="/chooseSignup">Bliv medlem</a>
+        <a href="/chooseLogin">Log in</a>
+      </div>
+    </div>
+
+    <div id="info">
+      <h1>Kundehenvendelser bedes gå gennem telefon eller mail.</h1>
+      <h3>Telefon nummer: 1234 5678 </h3>
+      <h3>Mail: support@fitnesscoach.dk </h3>
+    </div>
+
+    <div id="Bored">
+      <h3> Vi har også andre gode ideer end træning...</h3>
+      <p id="activity"></p>
+      <script>
+        function doApiRequest() {
+          $.ajax({
+            type: 'GET',
+            url: "https://www.boredapi.com/api/activity",
+            success: function (data) {
+              console.log("Success", data)
+              document.getElementById("activity").textContent = data.activity;
+            }
+          });
+        }             
+      </script>
+
+      <button onclick="doApiRequest()">Click me</button>
+
+    </div>
+
+
+
+</body>
+
+</html>

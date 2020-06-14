@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/frontpage.css">
+    <link rel="stylesheet" type="text/css" href="/chat.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <title>Kontakt os</title>
+</head>
+
+<body>
+    <div class="hero-image">
+        <div class="container">
+            <div class="topnav">
+                <div class="topnav-centered">
+                    <a href="/" class="active">Din Personlig Træner</a>
+                </div>
+                <a href="/">Forside</a>
+                <a href="/frontpage/trainers">Trænere</a>
+                <a href="/frontpage/Contactus">Kontakt os</a>
+                <div class="topnav-right">
+                    <a href="/chooseSignup">Bliv medlem</a>
+                    <a href="/chooseLogin">Log in</a>
+                </div>
+            </div>
+            <div class="header-before-container">
+                <br>
+                <br>
+                <h2>Chat med os live</h2>
+            </div>
+
+<!---------------------------------->
+
+
+
+
+
+                <div class="trainer-customer-table">
+
+                    <div class="chatbar">
+                        <div id="conversation"></div>
+                        <input id="data" style="width:310px;" />
+                        <input type="button" id="datasend" value="Send" />
+                    </div>
+
+                </div>
+        </div>
+            <script>
+            const socket = io.connect("localhost:3232");
+
+            //on connection to server, ask for user's name with an anonymous callback
+                socket.on('connect', function () {
+                // call the server-side function 'adduser' and send one parameter (value of prompt)
+                socket.emit('adduser', prompt("What's your name?"));
+            });
+
+            // listener, whenever the server emits 'updatechat', this updates the chat body
+            socket.on('updatechat', function (username, data) {
+                $('#conversation').append('<b>' + username + ':</b> ' + data + '<br>');
+            });
+
+            // listener, whenever the server emits 'updateusers', this updates the username list
+            socket.on('updateusers', function (data) {
+                $('#users').empty();
+                $.each(data, function (key, value) {
+                    $('#users').append('<div>' + key + '</div>');
+                });
+            });
+
+            // on load of page
+            $(function () {
+                // when the client clicks SEND
+                $('#datasend').click(function () {
+                    var message = $('#data').val();
+                    $('#data').val('');
+                    // tell server to execute 'sendchat' and send along one parameter
+                    socket.emit('sendchat', message);
+                });
+
+                // when the client hits ENTER on their keyboard
+                $('#data').keypress(function (e) {
+                    if (e.which == 13) {
+                        $(this).blur();
+                        $('#datasend').focus().click();
+                    }
+                });
+            });
+
+        </script>
+
+<!------------>
+
+
+
+                <br>
+
+            </div>
+
+            <div class=" footer">
+                <div class="footer-centered">
+                    <a href="/" class="active">Din Personlig Træner</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

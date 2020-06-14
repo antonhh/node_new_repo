@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Client chat</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <link rel="stylesheet" type="text/css" href="trainer-package-table.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="topnav">
+      <div class="topnav-centered">
+        <a href="/" class="active">Din Personlig Træner</a>
+      </div>
+      <a href="/frontpage">Forside</a>
+      <a href="/gyms">Center</a>
+      <a href="/courses">Hold</a>
+      <a href="/instructors">Instruktøre</a>
+      <a href="/contact">Kunde henvendelser</a>
+      <div class="topnav-right">
+        <a href="/chooseLogin">Profil</a>
+        <a href="/logout">Log ud</a>
+      </div>
+    </div>
+
+    <div class="header-before-container">
+      <br>
+      <br>
+      <h1 id="loggedIn-trainer">Velkommen</h1>
+    </div>
+
+    <div class="container-in-container">
+
+      <div class="column-in-container">
+
+        <h1>Dine klienter</h1>
+        <div class="trainer-customer-table">
+
+          <input id="thoughts" />
+          <button id="submit">Submit</button>
+
+          <div id="conversation"></div>
+
+        </div>
+      </div>
+      <div class="column-in-container">
+
+
+      </div>
+
+
+
+
+
+      <div class="footer">
+        <div class="footer-centered">
+          <a href="/" class="active">Din Personlig Træner</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script>
+      const socket = io.connect("localhost:3232");
+
+      $("#submit").click(() => {
+        const thoughts = $("#thoughts").val();
+        $("#thoughts").val("");
+        socket.emit("a client wrote this", { thoughts });
+      });
+
+      socket.on("A client said", (data) => {
+        var today = new Date();
+        var time =
+          today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        $("#conversation").prepend(`<div> ${time} - ${email} - ${data.thoughts}</div>`);
+      });
+    </script>
+
+
+</body>
+
+</html>
